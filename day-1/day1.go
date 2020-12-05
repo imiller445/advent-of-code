@@ -20,13 +20,34 @@ func main() {
 		fmt.Println("Error reading file", err)
 		return
 	}
+	part_1(expenseReport)
+	part_2(expenseReport)
+}
+
+func part_1(expenseReport []int) {
 out:
 	for i := 0; i < len(expenseReport); i++ {
 		for j := 0; j < len(expenseReport); j++ {
 			if i != j && expenseReport[i]+expenseReport[j] == 2020 {
 				answer := expenseReport[i] * expenseReport[j]
-				fmt.Println("Answer is", answer)
+				fmt.Println("Part 1 answer is", answer)
 				break out
+			}
+		}
+
+	}
+}
+
+func part_2(expenseReport []int) {
+out:
+	for i := 0; i < len(expenseReport); i++ {
+		for j := 0; j < len(expenseReport); j++ {
+			for k := 0; k < len(expenseReport); k++ {
+				if i != j && expenseReport[i]+expenseReport[j]+expenseReport[k] == 2020 {
+					answer := expenseReport[i] * expenseReport[j] * expenseReport[k]
+					fmt.Println("Part 2 answer is", answer)
+					break out
+				}
 			}
 		}
 	}
