@@ -23,7 +23,6 @@ func main() {
 		secondValue, _ := strconv.Atoi(secondCut[0])
 		letter := strings.Split(secondCut[1], ":")[0]
 		password := secondCut[2]
-		//fmt.Println(firstValue, secondValue, letter,password)
 		if isValidPart1(firstValue, secondValue, letter, password) {
 			part1ValidCount++
 		}
